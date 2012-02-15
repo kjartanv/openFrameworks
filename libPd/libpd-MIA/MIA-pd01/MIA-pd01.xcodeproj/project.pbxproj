@@ -33,35 +33,6 @@
 		D1CBF55114EA94B30014B919 /* PdDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4CD14EA94B30014B919 /* PdDispatcher.m */; };
 		D1CBF55214EA94B30014B919 /* PdFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4CF14EA94B30014B919 /* PdFile.m */; };
 		D1CBF55314EA94B30014B919 /* ringbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4D014EA94B30014B919 /* ringbuffer.c */; };
-		D1CBF55414EA94B30014B919 /* choice-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4D514EA94B30014B919 /* choice-help.pd */; };
-		D1CBF55514EA94B30014B919 /* choice.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4D614EA94B30014B919 /* choice.c */; };
-		D1CBF55614EA94B30014B919 /* GNUmakefile.am in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4D714EA94B30014B919 /* GNUmakefile.am */; };
-		D1CBF55714EA94B30014B919 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4D814EA94B30014B919 /* makefile */; };
-		D1CBF55814EA94B30014B919 /* complex-mod~-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4D914EA94B30014B919 /* complex-mod~-help.pd */; };
-		D1CBF55914EA94B30014B919 /* complex-mod~.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4DA14EA94B30014B919 /* complex-mod~.pd */; };
-		D1CBF55A14EA94B30014B919 /* expr-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4DB14EA94B30014B919 /* expr-help.pd */; };
-		D1CBF55B14EA94B30014B919 /* hilbert~-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4DC14EA94B30014B919 /* hilbert~-help.pd */; };
-		D1CBF55C14EA94B30014B919 /* hilbert~.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4DD14EA94B30014B919 /* hilbert~.pd */; };
-		D1CBF55D14EA94B30014B919 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4DE14EA94B30014B919 /* makefile */; };
-		D1CBF55E14EA94B30014B919 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4DF14EA94B30014B919 /* Makefile.am */; };
-		D1CBF55F14EA94B30014B919 /* makefile.subdir in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E014EA94B30014B919 /* makefile.subdir */; };
-		D1CBF56014EA94B30014B919 /* GNUmakefile.am in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E214EA94B30014B919 /* GNUmakefile.am */; };
-		D1CBF56114EA94B30014B919 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4E314EA94B30014B919 /* makefile */; };
-		D1CBF56214EA94B30014B919 /* pique-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E414EA94B30014B919 /* pique-help.pd */; };
-		D1CBF56314EA94B30014B919 /* pique.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4E514EA94B30014B919 /* pique.c */; };
-		D1CBF56414EA94B30014B919 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E614EA94B30014B919 /* README.txt */; };
-		D1CBF56514EA94B30014B919 /* rev1-final.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E714EA94B30014B919 /* rev1-final.pd */; };
-		D1CBF56614EA94B30014B919 /* rev1-stage.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E814EA94B30014B919 /* rev1-stage.pd */; };
-		D1CBF56714EA94B30014B919 /* rev1~-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4E914EA94B30014B919 /* rev1~-help.pd */; };
-		D1CBF56814EA94B30014B919 /* rev1~.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4EA14EA94B30014B919 /* rev1~.pd */; };
-		D1CBF56914EA94B30014B919 /* rev2~-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4EB14EA94B30014B919 /* rev2~-help.pd */; };
-		D1CBF56A14EA94B30014B919 /* rev2~.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4EC14EA94B30014B919 /* rev2~.pd */; };
-		D1CBF56B14EA94B30014B919 /* rev3~-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4ED14EA94B30014B919 /* rev3~-help.pd */; };
-		D1CBF56C14EA94B30014B919 /* rev3~.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4EE14EA94B30014B919 /* rev3~.pd */; };
-		D1CBF56D14EA94B30014B919 /* GNUmakefile.am in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4F014EA94B30014B919 /* GNUmakefile.am */; };
-		D1CBF56E14EA94B30014B919 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4F114EA94B30014B919 /* makefile */; };
-		D1CBF56F14EA94B30014B919 /* stdout-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF4F214EA94B30014B919 /* stdout-help.pd */; };
-		D1CBF57014EA94B30014B919 /* stdout.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4F314EA94B30014B919 /* stdout.c */; };
 		D1CBF57114EA94B30014B919 /* d_arithmetic.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4F514EA94B30014B919 /* d_arithmetic.c */; };
 		D1CBF57214EA94B30014B919 /* d_array.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4F614EA94B30014B919 /* d_array.c */; };
 		D1CBF57314EA94B30014B919 /* d_ctl.c in Sources */ = {isa = PBXBuildFile; fileRef = D1CBF4F714EA94B30014B919 /* d_ctl.c */; };
@@ -178,35 +149,6 @@
 		D1CBF4CF14EA94B30014B919 /* PdFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdFile.m; sourceTree = "<group>"; };
 		D1CBF4D014EA94B30014B919 /* ringbuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ringbuffer.c; sourceTree = "<group>"; };
 		D1CBF4D114EA94B30014B919 /* ringbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ringbuffer.h; sourceTree = "<group>"; };
-		D1CBF4D514EA94B30014B919 /* choice-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "choice-help.pd"; sourceTree = "<group>"; };
-		D1CBF4D614EA94B30014B919 /* choice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = choice.c; sourceTree = "<group>"; };
-		D1CBF4D714EA94B30014B919 /* GNUmakefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.am; sourceTree = "<group>"; };
-		D1CBF4D814EA94B30014B919 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		D1CBF4D914EA94B30014B919 /* complex-mod~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "complex-mod~-help.pd"; sourceTree = "<group>"; };
-		D1CBF4DA14EA94B30014B919 /* complex-mod~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "complex-mod~.pd"; sourceTree = "<group>"; };
-		D1CBF4DB14EA94B30014B919 /* expr-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "expr-help.pd"; sourceTree = "<group>"; };
-		D1CBF4DC14EA94B30014B919 /* hilbert~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hilbert~-help.pd"; sourceTree = "<group>"; };
-		D1CBF4DD14EA94B30014B919 /* hilbert~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hilbert~.pd"; sourceTree = "<group>"; };
-		D1CBF4DE14EA94B30014B919 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		D1CBF4DF14EA94B30014B919 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
-		D1CBF4E014EA94B30014B919 /* makefile.subdir */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makefile.subdir; sourceTree = "<group>"; };
-		D1CBF4E214EA94B30014B919 /* GNUmakefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.am; sourceTree = "<group>"; };
-		D1CBF4E314EA94B30014B919 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		D1CBF4E414EA94B30014B919 /* pique-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pique-help.pd"; sourceTree = "<group>"; };
-		D1CBF4E514EA94B30014B919 /* pique.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pique.c; sourceTree = "<group>"; };
-		D1CBF4E614EA94B30014B919 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		D1CBF4E714EA94B30014B919 /* rev1-final.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev1-final.pd"; sourceTree = "<group>"; };
-		D1CBF4E814EA94B30014B919 /* rev1-stage.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev1-stage.pd"; sourceTree = "<group>"; };
-		D1CBF4E914EA94B30014B919 /* rev1~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev1~-help.pd"; sourceTree = "<group>"; };
-		D1CBF4EA14EA94B30014B919 /* rev1~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev1~.pd"; sourceTree = "<group>"; };
-		D1CBF4EB14EA94B30014B919 /* rev2~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev2~-help.pd"; sourceTree = "<group>"; };
-		D1CBF4EC14EA94B30014B919 /* rev2~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev2~.pd"; sourceTree = "<group>"; };
-		D1CBF4ED14EA94B30014B919 /* rev3~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev3~-help.pd"; sourceTree = "<group>"; };
-		D1CBF4EE14EA94B30014B919 /* rev3~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rev3~.pd"; sourceTree = "<group>"; };
-		D1CBF4F014EA94B30014B919 /* GNUmakefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.am; sourceTree = "<group>"; };
-		D1CBF4F114EA94B30014B919 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		D1CBF4F214EA94B30014B919 /* stdout-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "stdout-help.pd"; sourceTree = "<group>"; };
-		D1CBF4F314EA94B30014B919 /* stdout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stdout.c; sourceTree = "<group>"; };
 		D1CBF4F514EA94B30014B919 /* d_arithmetic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = d_arithmetic.c; sourceTree = "<group>"; };
 		D1CBF4F614EA94B30014B919 /* d_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = d_array.c; sourceTree = "<group>"; };
 		D1CBF4F714EA94B30014B919 /* d_ctl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = d_ctl.c; sourceTree = "<group>"; };
@@ -414,70 +356,9 @@
 		D1CBF4D214EA94B30014B919 /* pure-data */ = {
 			isa = PBXGroup;
 			children = (
-				D1CBF4D314EA94B30014B919 /* extra */,
 				D1CBF4F414EA94B30014B919 /* src */,
 			);
 			path = "pure-data";
-			sourceTree = "<group>";
-		};
-		D1CBF4D314EA94B30014B919 /* extra */ = {
-			isa = PBXGroup;
-			children = (
-				D1CBF4D414EA94B30014B919 /* choice */,
-				D1CBF4D914EA94B30014B919 /* complex-mod~-help.pd */,
-				D1CBF4DA14EA94B30014B919 /* complex-mod~.pd */,
-				D1CBF4DB14EA94B30014B919 /* expr-help.pd */,
-				D1CBF4DC14EA94B30014B919 /* hilbert~-help.pd */,
-				D1CBF4DD14EA94B30014B919 /* hilbert~.pd */,
-				D1CBF4DE14EA94B30014B919 /* makefile */,
-				D1CBF4DF14EA94B30014B919 /* Makefile.am */,
-				D1CBF4E014EA94B30014B919 /* makefile.subdir */,
-				D1CBF4E114EA94B30014B919 /* pique */,
-				D1CBF4E614EA94B30014B919 /* README.txt */,
-				D1CBF4E714EA94B30014B919 /* rev1-final.pd */,
-				D1CBF4E814EA94B30014B919 /* rev1-stage.pd */,
-				D1CBF4E914EA94B30014B919 /* rev1~-help.pd */,
-				D1CBF4EA14EA94B30014B919 /* rev1~.pd */,
-				D1CBF4EB14EA94B30014B919 /* rev2~-help.pd */,
-				D1CBF4EC14EA94B30014B919 /* rev2~.pd */,
-				D1CBF4ED14EA94B30014B919 /* rev3~-help.pd */,
-				D1CBF4EE14EA94B30014B919 /* rev3~.pd */,
-				D1CBF4EF14EA94B30014B919 /* stdout */,
-			);
-			path = extra;
-			sourceTree = "<group>";
-		};
-		D1CBF4D414EA94B30014B919 /* choice */ = {
-			isa = PBXGroup;
-			children = (
-				D1CBF4D514EA94B30014B919 /* choice-help.pd */,
-				D1CBF4D614EA94B30014B919 /* choice.c */,
-				D1CBF4D714EA94B30014B919 /* GNUmakefile.am */,
-				D1CBF4D814EA94B30014B919 /* makefile */,
-			);
-			path = choice;
-			sourceTree = "<group>";
-		};
-		D1CBF4E114EA94B30014B919 /* pique */ = {
-			isa = PBXGroup;
-			children = (
-				D1CBF4E214EA94B30014B919 /* GNUmakefile.am */,
-				D1CBF4E314EA94B30014B919 /* makefile */,
-				D1CBF4E414EA94B30014B919 /* pique-help.pd */,
-				D1CBF4E514EA94B30014B919 /* pique.c */,
-			);
-			path = pique;
-			sourceTree = "<group>";
-		};
-		D1CBF4EF14EA94B30014B919 /* stdout */ = {
-			isa = PBXGroup;
-			children = (
-				D1CBF4F014EA94B30014B919 /* GNUmakefile.am */,
-				D1CBF4F114EA94B30014B919 /* makefile */,
-				D1CBF4F214EA94B30014B919 /* stdout-help.pd */,
-				D1CBF4F314EA94B30014B919 /* stdout.c */,
-			);
-			path = stdout;
 			sourceTree = "<group>";
 		};
 		D1CBF4F414EA94B30014B919 /* src */ = {
@@ -621,28 +502,6 @@
 				D1CBF49C14EA92B00014B919 /* InfoPlist.strings in Resources */,
 				D1CBF4A814EA92B00014B919 /* MIA_pd01ViewController.xib in Resources */,
 				D1CBF54A14EA94B30014B919 /* LICENSE.txt in Resources */,
-				D1CBF55414EA94B30014B919 /* choice-help.pd in Resources */,
-				D1CBF55614EA94B30014B919 /* GNUmakefile.am in Resources */,
-				D1CBF55814EA94B30014B919 /* complex-mod~-help.pd in Resources */,
-				D1CBF55914EA94B30014B919 /* complex-mod~.pd in Resources */,
-				D1CBF55A14EA94B30014B919 /* expr-help.pd in Resources */,
-				D1CBF55B14EA94B30014B919 /* hilbert~-help.pd in Resources */,
-				D1CBF55C14EA94B30014B919 /* hilbert~.pd in Resources */,
-				D1CBF55E14EA94B30014B919 /* Makefile.am in Resources */,
-				D1CBF55F14EA94B30014B919 /* makefile.subdir in Resources */,
-				D1CBF56014EA94B30014B919 /* GNUmakefile.am in Resources */,
-				D1CBF56214EA94B30014B919 /* pique-help.pd in Resources */,
-				D1CBF56414EA94B30014B919 /* README.txt in Resources */,
-				D1CBF56514EA94B30014B919 /* rev1-final.pd in Resources */,
-				D1CBF56614EA94B30014B919 /* rev1-stage.pd in Resources */,
-				D1CBF56714EA94B30014B919 /* rev1~-help.pd in Resources */,
-				D1CBF56814EA94B30014B919 /* rev1~.pd in Resources */,
-				D1CBF56914EA94B30014B919 /* rev2~-help.pd in Resources */,
-				D1CBF56A14EA94B30014B919 /* rev2~.pd in Resources */,
-				D1CBF56B14EA94B30014B919 /* rev3~-help.pd in Resources */,
-				D1CBF56C14EA94B30014B919 /* rev3~.pd in Resources */,
-				D1CBF56D14EA94B30014B919 /* GNUmakefile.am in Resources */,
-				D1CBF56F14EA94B30014B919 /* stdout-help.pd in Resources */,
 				D1CBF5B414EA94B40014B919 /* README.txt in Resources */,
 				D1B58E8614EBEB2600FF3FBB /* 2synths.pd in Resources */,
 				D1B58E8814EBF1C100FF3FBB /* panflute_a2.png in Resources */,
@@ -671,13 +530,6 @@
 				D1CBF55114EA94B30014B919 /* PdDispatcher.m in Sources */,
 				D1CBF55214EA94B30014B919 /* PdFile.m in Sources */,
 				D1CBF55314EA94B30014B919 /* ringbuffer.c in Sources */,
-				D1CBF55514EA94B30014B919 /* choice.c in Sources */,
-				D1CBF55714EA94B30014B919 /* makefile in Sources */,
-				D1CBF55D14EA94B30014B919 /* makefile in Sources */,
-				D1CBF56114EA94B30014B919 /* makefile in Sources */,
-				D1CBF56314EA94B30014B919 /* pique.c in Sources */,
-				D1CBF56E14EA94B30014B919 /* makefile in Sources */,
-				D1CBF57014EA94B30014B919 /* stdout.c in Sources */,
 				D1CBF57114EA94B30014B919 /* d_arithmetic.c in Sources */,
 				D1CBF57214EA94B30014B919 /* d_array.c in Sources */,
 				D1CBF57314EA94B30014B919 /* d_ctl.c in Sources */,
