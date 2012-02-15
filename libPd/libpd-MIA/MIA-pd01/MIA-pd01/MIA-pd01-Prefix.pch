@@ -1,0 +1,20 @@
+//
+// Prefix header for all source files of the 'MIA-pd01' target in the 'MIA-pd01' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+// libpd DEFINES:
+#define PD
+#define USA_API_DUMMY
+#define HAVE_LIBDL
+#define HAVE_UNISTD_H
