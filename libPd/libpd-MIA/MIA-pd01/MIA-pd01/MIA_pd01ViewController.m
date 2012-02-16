@@ -86,6 +86,8 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+
 /*
 - (void) openAndRunTestPatch
 {

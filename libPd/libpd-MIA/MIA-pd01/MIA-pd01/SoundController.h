@@ -10,19 +10,24 @@
 #import <CoreMIDI/CoreMIDI.h>
 #import "PdAudio.h"
 #import "PdBase.h"
+#import "MiaSensorDelegate.h"
+
 
 @interface SoundController : NSObject <PdReceiverDelegate> {
+    
     PdAudio *pdAudio;   // PdAudio object that acts as glue between LibPd and CoreAudio
+    
+    MiaSensorDelegate *sensorDelegate;
+    
     MIDIClientRef client;
     MIDIPortRef inPort;
     MIDIPortRef outPort;
     MIDIEndpointRef src;
     MIDIEndpointRef dest;
     
-    int notePitch;      // variable representing the value of pitchSlider on GUI
+    
 }
 
-@property int notePitch;
 
 - (SoundController*) init;
 - (void) sendNote:(int)note;

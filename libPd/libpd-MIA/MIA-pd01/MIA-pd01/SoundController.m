@@ -23,8 +23,6 @@
 
 @implementation SoundController
 
-@synthesize notePitch;
-
 
 ////////////////////////////////////
 // Initialize the Sound Controller
@@ -33,10 +31,20 @@
 {
     self = [super init];
     
+    sensorDelegate = [[[MiaSensorDelegate alloc] init] autorelease];
+    NSThread* sensorThread = [[NSThread alloc] initWithTarget:sensorDelegate 
+                                                     selector:@selector(update:::::::::) 
+                                                       object:nil];
+    
     [self setUpMIDI];
     
     [self setupPd];
     [self openAndRunTestPatch];
+    
+    // Start listening to motion sensor data
+    [sensorThread start];  
+    [sensorDelegate startAnimation];
+    // Sjekk: http://stackoverflow.com/questions/4763307/iphone-starting-an-nsthread-from-a-c-object
     
     // debug
     BOOL result = [PdBase exists:@"fromPd"];
@@ -71,7 +79,7 @@
     // Set the delegate so this object can receive messages from PureData
     [PdBase setDelegate:self];
     
-    // Subscribe messages from
+    // Subscribe to messages from PD
     [PdBase subscribe:@"fromPd"];
 }
 
@@ -117,7 +125,6 @@
 
 - (void)updatePitch:(int)pitch
 {
-    //notePitch = pitch;
     [PdBase sendFloat:pitch toReceiver:@"notePitch"];
 }
 
@@ -221,6 +228,15 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 		packet = MIDIPacketNext(packet);
 	}
 }
+
+- (void) dealloc
+{
+	[sensorDelegate stopAnimation];
+    [sensorDelegate dealloc];
+    
+	[super dealloc];
+}
+
 
 
 

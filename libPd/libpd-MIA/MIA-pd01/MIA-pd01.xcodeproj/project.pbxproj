@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D13D429A14ED0FE30007551D /* MiaSensorDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D13D429914ED0FE20007551D /* MiaSensorDelegate.mm */; };
+		D13D429D14ED16F70007551D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D429C14ED16F70007551D /* CoreMotion.framework */; };
 		D1B58E7F14EBA58600FF3FBB /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B58E7E14EBA58600FF3FBB /* SoundController.m */; };
 		D1B58E8614EBEB2600FF3FBB /* 2synths.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1B58E8514EBEB2600FF3FBB /* 2synths.pd */; };
 		D1B58E8814EBF1C100FF3FBB /* panflute_a2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B58E8714EBF1C100FF3FBB /* panflute_a2.png */; };
@@ -106,6 +108,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D13D429814ED0FE20007551D /* MiaSensorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaSensorDelegate.h; sourceTree = "<group>"; };
+		D13D429914ED0FE20007551D /* MiaSensorDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MiaSensorDelegate.mm; sourceTree = "<group>"; };
+		D13D429C14ED16F70007551D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D1B58E7D14EBA58600FF3FBB /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
 		D1B58E7E14EBA58600FF3FBB /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
 		D1B58E8514EBEB2600FF3FBB /* 2synths.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2synths.pd; sourceTree = "<group>"; };
@@ -232,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13D429D14ED16F70007551D /* CoreMotion.framework in Frameworks */,
 				D1B58E9314EBFEE100FF3FBB /* CoreMIDI.framework in Frameworks */,
 				D1CBF5BC14EA97D60014B919 /* AVFoundation.framework in Frameworks */,
 				D1CBF5B714EA957E0014B919 /* AudioToolbox.framework in Frameworks */,
@@ -268,6 +274,7 @@
 		D1CBF49014EA92B00014B919 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D13D429C14ED16F70007551D /* CoreMotion.framework */,
 				D1B58E9214EBFEE100FF3FBB /* CoreMIDI.framework */,
 				D1CBF5BB14EA97D60014B919 /* AVFoundation.framework */,
 				D1CBF5B614EA957E0014B919 /* AudioToolbox.framework */,
@@ -285,6 +292,8 @@
 				D1B58E9014EBFCE800FF3FBB /* SNFCoreAudioUtils.m */,
 				D1B58E7D14EBA58600FF3FBB /* SoundController.h */,
 				D1B58E7E14EBA58600FF3FBB /* SoundController.m */,
+				D13D429814ED0FE20007551D /* MiaSensorDelegate.h */,
+				D13D429914ED0FE20007551D /* MiaSensorDelegate.mm */,
 				D1CBF4A014EA92B00014B919 /* MIA_pd01AppDelegate.h */,
 				D1CBF4A114EA92B00014B919 /* MIA_pd01AppDelegate.m */,
 				D1CBF4A314EA92B00014B919 /* MIA_pd01ViewController.h */,
@@ -599,6 +608,7 @@
 				D1CBF5B314EA94B40014B919 /* x_time.c in Sources */,
 				D1B58E7F14EBA58600FF3FBB /* SoundController.m in Sources */,
 				D1B58E9114EBFCE800FF3FBB /* SNFCoreAudioUtils.m in Sources */,
+				D13D429A14ED0FE30007551D /* MiaSensorDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
