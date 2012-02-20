@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D12922CE14EE8D110012567F /* BD01.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922C414EE8D110012567F /* BD01.WAV */; };
+		D12922CF14EE8D110012567F /* CLAPS.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922C514EE8D110012567F /* CLAPS.WAV */; };
+		D12922D014EE8D110012567F /* CLHAT1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922C614EE8D110012567F /* CLHAT1.WAV */; };
+		D12922D114EE8D110012567F /* COWBELL.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922C714EE8D110012567F /* COWBELL.WAV */; };
+		D12922D214EE8D110012567F /* OPHAT1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922C814EE8D110012567F /* OPHAT1.WAV */; };
+		D12922D314EE8D110012567F /* RIDE1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922C914EE8D110012567F /* RIDE1.WAV */; };
+		D12922D414EE8D110012567F /* SD01.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922CA14EE8D110012567F /* SD01.WAV */; };
+		D12922D514EE8D110012567F /* SHAKE1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922CB14EE8D110012567F /* SHAKE1.WAV */; };
+		D12922D614EE8D110012567F /* TOM05L.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922CC14EE8D110012567F /* TOM05L.WAV */; };
+		D12922D714EE8D110012567F /* TOM09H.WAV in Resources */ = {isa = PBXBuildFile; fileRef = D12922CD14EE8D110012567F /* TOM09H.WAV */; };
 		D13D429A14ED0FE30007551D /* MiaSensorDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D13D429914ED0FE20007551D /* MiaSensorDelegate.mm */; };
 		D13D429D14ED16F70007551D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13D429C14ED16F70007551D /* CoreMotion.framework */; };
 		D1B58E7F14EBA58600FF3FBB /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B58E7E14EBA58600FF3FBB /* SoundController.m */; };
-		D1B58E8614EBEB2600FF3FBB /* 2synths.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1B58E8514EBEB2600FF3FBB /* 2synths.pd */; };
 		D1B58E8814EBF1C100FF3FBB /* panflute_a2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B58E8714EBF1C100FF3FBB /* panflute_a2.png */; };
 		D1B58E8A14EBF2A900FF3FBB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B58E8914EBF2A900FF3FBB /* Default@2x.png */; };
 		D1B58E9114EBFCE800FF3FBB /* SNFCoreAudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B58E9014EBFCE800FF3FBB /* SNFCoreAudioUtils.m */; };
@@ -105,15 +114,30 @@
 		D1CBF5B414EA94B40014B919 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D1CBF53E14EA94B30014B919 /* README.txt */; };
 		D1CBF5B714EA957E0014B919 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CBF5B614EA957E0014B919 /* AudioToolbox.framework */; };
 		D1CBF5BC14EA97D60014B919 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CBF5BB14EA97D60014B919 /* AVFoundation.framework */; };
+		D1D76B1314EE520500991667 /* Drummachine+synths.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1D76B0214EE520500991667 /* Drummachine+synths.pd */; };
+		D1D76B1414EE520500991667 /* instruments.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1D76B0314EE520500991667 /* instruments.pd */; };
+		D1D76B1514EE520500991667 /* instruments2.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1D76B0414EE520500991667 /* instruments2.pd */; };
+		D1D76B1614EE520500991667 /* sampleplayer.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1D76B0514EE520500991667 /* sampleplayer.pd */; };
+		D1D76B2114EE520500991667 /* sequence.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1D76B1114EE520500991667 /* sequence.pd */; };
+		D1D76B2214EE520500991667 /* sequencetable.pd in Resources */ = {isa = PBXBuildFile; fileRef = D1D76B1214EE520500991667 /* sequencetable.pd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D12922C414EE8D110012567F /* BD01.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BD01.WAV; sourceTree = "<group>"; };
+		D12922C514EE8D110012567F /* CLAPS.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CLAPS.WAV; sourceTree = "<group>"; };
+		D12922C614EE8D110012567F /* CLHAT1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CLHAT1.WAV; sourceTree = "<group>"; };
+		D12922C714EE8D110012567F /* COWBELL.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = COWBELL.WAV; sourceTree = "<group>"; };
+		D12922C814EE8D110012567F /* OPHAT1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OPHAT1.WAV; sourceTree = "<group>"; };
+		D12922C914EE8D110012567F /* RIDE1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RIDE1.WAV; sourceTree = "<group>"; };
+		D12922CA14EE8D110012567F /* SD01.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SD01.WAV; sourceTree = "<group>"; };
+		D12922CB14EE8D110012567F /* SHAKE1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SHAKE1.WAV; sourceTree = "<group>"; };
+		D12922CC14EE8D110012567F /* TOM05L.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TOM05L.WAV; sourceTree = "<group>"; };
+		D12922CD14EE8D110012567F /* TOM09H.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TOM09H.WAV; sourceTree = "<group>"; };
 		D13D429814ED0FE20007551D /* MiaSensorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaSensorDelegate.h; sourceTree = "<group>"; };
 		D13D429914ED0FE20007551D /* MiaSensorDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MiaSensorDelegate.mm; sourceTree = "<group>"; };
 		D13D429C14ED16F70007551D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D1B58E7D14EBA58600FF3FBB /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
 		D1B58E7E14EBA58600FF3FBB /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
-		D1B58E8514EBEB2600FF3FBB /* 2synths.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2synths.pd; sourceTree = "<group>"; };
 		D1B58E8714EBF1C100FF3FBB /* panflute_a2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panflute_a2.png; sourceTree = "<group>"; };
 		D1B58E8914EBF2A900FF3FBB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D1B58E8F14EBFCE800FF3FBB /* SNFCoreAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNFCoreAudioUtils.h; sourceTree = "<group>"; };
@@ -230,6 +254,12 @@
 		D1CBF53E14EA94B30014B919 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		D1CBF5B614EA957E0014B919 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D1CBF5BB14EA97D60014B919 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D1D76B0214EE520500991667 /* Drummachine+synths.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Drummachine+synths.pd"; sourceTree = "<group>"; };
+		D1D76B0314EE520500991667 /* instruments.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instruments.pd; sourceTree = "<group>"; };
+		D1D76B0414EE520500991667 /* instruments2.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instruments2.pd; sourceTree = "<group>"; };
+		D1D76B0514EE520500991667 /* sampleplayer.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleplayer.pd; sourceTree = "<group>"; };
+		D1D76B1114EE520500991667 /* sequence.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequence.pd; sourceTree = "<group>"; };
+		D1D76B1214EE520500991667 /* sequencetable.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sequencetable.pd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,9 +483,32 @@
 		D1CBF5B814EA95C80014B919 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D1B58E8514EBEB2600FF3FBB /* 2synths.pd */,
+				D1D76B0614EE520500991667 /* samples */,
+				D12922C414EE8D110012567F /* BD01.WAV */,
+				D12922C514EE8D110012567F /* CLAPS.WAV */,
+				D12922C614EE8D110012567F /* CLHAT1.WAV */,
+				D12922C714EE8D110012567F /* COWBELL.WAV */,
+				D12922C814EE8D110012567F /* OPHAT1.WAV */,
+				D12922C914EE8D110012567F /* RIDE1.WAV */,
+				D12922CA14EE8D110012567F /* SD01.WAV */,
+				D12922CB14EE8D110012567F /* SHAKE1.WAV */,
+				D12922CC14EE8D110012567F /* TOM05L.WAV */,
+				D12922CD14EE8D110012567F /* TOM09H.WAV */,
+				D1D76B0214EE520500991667 /* Drummachine+synths.pd */,
+				D1D76B0314EE520500991667 /* instruments.pd */,
+				D1D76B0414EE520500991667 /* instruments2.pd */,
+				D1D76B0514EE520500991667 /* sampleplayer.pd */,
+				D1D76B1114EE520500991667 /* sequence.pd */,
+				D1D76B1214EE520500991667 /* sequencetable.pd */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D1D76B0614EE520500991667 /* samples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,9 +565,24 @@
 				D1CBF4A814EA92B00014B919 /* MIA_pd01ViewController.xib in Resources */,
 				D1CBF54A14EA94B30014B919 /* LICENSE.txt in Resources */,
 				D1CBF5B414EA94B40014B919 /* README.txt in Resources */,
-				D1B58E8614EBEB2600FF3FBB /* 2synths.pd in Resources */,
 				D1B58E8814EBF1C100FF3FBB /* panflute_a2.png in Resources */,
 				D1B58E8A14EBF2A900FF3FBB /* Default@2x.png in Resources */,
+				D1D76B1314EE520500991667 /* Drummachine+synths.pd in Resources */,
+				D1D76B1414EE520500991667 /* instruments.pd in Resources */,
+				D1D76B1514EE520500991667 /* instruments2.pd in Resources */,
+				D1D76B1614EE520500991667 /* sampleplayer.pd in Resources */,
+				D1D76B2114EE520500991667 /* sequence.pd in Resources */,
+				D1D76B2214EE520500991667 /* sequencetable.pd in Resources */,
+				D12922CE14EE8D110012567F /* BD01.WAV in Resources */,
+				D12922CF14EE8D110012567F /* CLAPS.WAV in Resources */,
+				D12922D014EE8D110012567F /* CLHAT1.WAV in Resources */,
+				D12922D114EE8D110012567F /* COWBELL.WAV in Resources */,
+				D12922D214EE8D110012567F /* OPHAT1.WAV in Resources */,
+				D12922D314EE8D110012567F /* RIDE1.WAV in Resources */,
+				D12922D414EE8D110012567F /* SD01.WAV in Resources */,
+				D12922D514EE8D110012567F /* SHAKE1.WAV in Resources */,
+				D12922D614EE8D110012567F /* TOM05L.WAV in Resources */,
+				D12922D714EE8D110012567F /* TOM09H.WAV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

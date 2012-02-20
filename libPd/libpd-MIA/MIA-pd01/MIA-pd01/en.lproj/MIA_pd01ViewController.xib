@@ -41,7 +41,7 @@
 					<object class="IBUILabel" id="904181234">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{112, 20}, {96, 21}}</string>
+						<string key="NSFrame">{{116, 20}, {89, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="831317061"/>
@@ -59,6 +59,7 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="1043324134">
 							<int key="type">1</int>
 							<double key="pointSize">17</double>
@@ -72,33 +73,39 @@
 					<object class="IBUISegmentedControl" id="831317061">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{57, 65}, {207, 44}}</string>
+						<string key="NSFrame">{{26, 65}, {269, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74664450"/>
 						<string key="NSReuseIdentifierKey">_NS:273</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBNumberOfSegments">2</int>
+						<int key="IBSegmentControlStyle">3</int>
+						<int key="IBNumberOfSegments">3</int>
 						<int key="IBSelectedSegmentIndex">0</int>
 						<array key="IBSegmentTitles">
-							<string>Sagtann</string>
 							<string>Sinus</string>
+							<string>Sagtann</string>
+							<string>Droid</string>
 						</array>
 						<array class="NSMutableArray" key="IBSegmentWidths">
+							<real value="0.0"/>
 							<real value="0.0"/>
 							<real value="0.0"/>
 						</array>
 						<array class="NSMutableArray" key="IBSegmentEnabledStates">
 							<boolean value="YES"/>
 							<boolean value="YES"/>
+							<boolean value="YES"/>
 						</array>
 						<array class="NSMutableArray" key="IBSegmentContentOffsets">
+							<string>{0, 0}</string>
 							<string>{0, 0}</string>
 							<string>{0, 0}</string>
 						</array>
 						<array class="NSMutableArray" key="IBSegmentImages">
 							<object class="NSNull" id="4"/>
+							<reference ref="4"/>
 							<reference ref="4"/>
 						</array>
 					</object>
@@ -115,7 +122,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Play note!</string>
+						<string key="IBUINormalTitle">Spill tone!</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -130,11 +137,11 @@
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
-							<double key="pointSize">15</double>
+							<double key="pointSize">20</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">15</double>
+							<double key="NSSize">20</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
@@ -157,7 +164,7 @@
 					<object class="IBUILabel" id="74664450">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{139, 149}, {43, 21}}</string>
+						<string key="NSFrame">{{114, 146}, {93, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="157522278"/>
@@ -167,11 +174,12 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Pitch:</string>
+						<string key="IBUIText">Tonehøyde:</string>
 						<reference key="IBUITextColor" ref="485724815"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="1043324134"/>
 						<reference key="IBUIFont" ref="921351490"/>
 					</object>
@@ -277,11 +285,11 @@
 						<int key="objectID">6</int>
 						<reference key="object" ref="774585933"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="831317061"/>
-							<reference ref="904181234"/>
 							<reference ref="336718960"/>
 							<reference ref="157522278"/>
+							<reference ref="831317061"/>
 							<reference ref="74664450"/>
+							<reference ref="904181234"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -318,8 +326,9 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<integer value="0" key="10.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<integer value="2" key="10.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="0.0" key="13.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

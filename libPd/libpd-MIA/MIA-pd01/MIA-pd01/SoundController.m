@@ -10,7 +10,7 @@
 #import "SNFCoreAudioUtils.h"
 
 #define SUCCESS 0
-#define FILE_NAME @"2synths.pd"
+#define FILE_NAME @"Drummachine+synths.pd"
 
 @interface SoundController()
 
@@ -89,6 +89,9 @@
 	NSString *bundlePath = [mainBundle bundlePath];
     NSString *res = [PdBase openFile:FILE_NAME path:bundlePath];
     
+    // selects the first instrument
+    [PdBase sendFloat:1 toReceiver:@"switch_instr"];
+    
     [pdAudio play];
 }
 
@@ -108,7 +111,8 @@
 // This method should be implemented to select an instrument
 - (void)selectInstrument:(int)instrument
 {
-    
+    [PdBase sendFloat:instrument toReceiver:@"switch_instr"];
+    NSLog(@"Instr switch: %d", instrument);
 }
 
 - (void)sendNote:(int)note 

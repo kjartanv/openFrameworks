@@ -18,9 +18,12 @@
 
 -(IBAction)instSelectorChanged:(UISegmentedControl *)sender
 {
-    //int instr = sender.selectedSegmentIndex;
+    // Convert to index starting at 1 instead of 0
+    int instr = sender.selectedSegmentIndex + 1;
+    [self.soundController selectInstrument:instr];
     
-    [self.soundController switchInstrument];
+    // old method
+    //[self.soundController switchInstrument];
 }
 
 -(IBAction)pitchSliderChanged:(UISlider *)slider
