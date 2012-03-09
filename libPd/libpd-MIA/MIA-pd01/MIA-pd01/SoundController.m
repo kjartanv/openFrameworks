@@ -9,6 +9,9 @@
 #import "SoundController.h"
 #import "SNFCoreAudioUtils.h"
 
+#include <ifaddrs.h>
+#include <arpa/inet.h>
+
 #define SUCCESS 0
 #define FILE_NAME @"Drummachine+synths.pd"
 
@@ -20,8 +23,14 @@
 
 @end
 
-
 @implementation SoundController
+
+@synthesize netClient;
+
+@synthesize isConnected;
+@synthesize browser;
+@synthesize connectedService;
+@synthesize services;
 
 
 ////////////////////////////////////
@@ -35,6 +44,9 @@
     NSThread* sensorThread = [[NSThread alloc] initWithTarget:sensorDelegate 
                                                      selector:@selector(update:::::::::) 
                                                        object:nil];
+    //messageStruct.midiMessage = "None";
+    strcpy(messageStruct.midiMessage, "None");
+    [self setIsConnected:FALSE];
     
     [self setUpMIDI];
     
@@ -55,6 +67,23 @@
     }
     
     return self;
+}
+
+/////////////////////////////////////
+// Getter and setter methods for struct
+//
+
+- (NSString*) getLastRecMsg
+{
+    NSString *string = [NSString stringWithUTF8String:messageStruct.midiMessage];
+    return string;
+}
+
+-(void) setLastRecMsg:(NSString *)lastReceivedMsg
+{
+    //messageStruct.midiMessage = [lastReceivedMsg UTF8String];
+    //char temp[64];
+    strcpy(messageStruct.midiMessage, [lastReceivedMsg UTF8String]);
 }
 
 
@@ -152,6 +181,252 @@
 
 #pragma mark - midi
 
+// Returns IP address of THIS device
+- (NSString *)getIPAddress
+{
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0)
+    {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL)
+        {
+            if(temp_addr->ifa_addr->sa_family == AF_INET)
+            {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"])
+                {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    
+    return address;
+}
+
+static
+BOOL IsNetworkSession(MIDIEndpointRef ref)
+{
+    MIDIEntityRef entity = 0;
+    MIDIEndpointGetEntity(ref, &entity);
+    
+    BOOL hasMidiRtpKey = NO;
+    CFPropertyListRef properties = nil;
+    OSStatus s = MIDIObjectGetProperties(entity, &properties, true);
+    if (!s)
+    {
+        NSDictionary *dictionary = (NSDictionary*)properties;
+        hasMidiRtpKey = [dictionary valueForKey:@"apple.midirtp.session"] != nil;
+        CFRelease(properties);
+    }
+    
+    return hasMidiRtpKey;
+}
+
+-(void)updateNetClient
+{
+    // contacts
+    if (session.contacts.count != 0) {
+        
+        NSLog(@"contacts!");
+        NSString *netString = [NSString stringWithFormat:@"C: "];
+        for (host in session.contacts)
+        {
+            [netString stringByAppendingString:host.name];
+            
+            for (MIDINetworkConnection* conn in session.connections)
+            {
+                [netString stringByAppendingString:@"-c-"];
+            }
+        }
+        [self setNetClient:netString];
+    }
+    else {
+        NSLog(@"contacts count = 0");
+    }
+    // a connection has been made by another host
+    if (session.connections.count != 0 && !isConnected) {
+        [self setIsConnected:TRUE];
+        NSLog(@"Connections!");
+    }
+    // a connection has been removed by another host
+    else if (session.connections.count == 0 && isConnected) {
+        [self setIsConnected:FALSE];
+        NSLog(@"Connections count = 0");
+    }
+}
+
+// Returns the (first) host, other than itself, that can
+// be connected to
+-(NSString*)hostToConnect
+{
+    NSString *localHostName = [[UIDevice currentDevice] name];
+    
+    for (host in session.contacts) {
+        if (![host.name isEqualToString:localHostName]) {
+            return host.name;
+        }
+    }
+    return @"None";
+}
+
+-(void)connectToHost:(NSString *)otherHost
+{
+    for (MIDINetworkHost *aHost in session.contacts) {
+        
+        if ([aHost.name isEqualToString:otherHost]) {
+            NSLog(@"Found %@", otherHost);
+            
+            MIDINetworkConnection* conn = [MIDINetworkConnection connectionWithHost:aHost];
+            if (isConnected) {
+                NSLog(@"Try to remove...");
+                if([session removeConnection:conn]) {
+                    NSLog(@"removed");
+                    [self setIsConnected:FALSE];
+                }
+            } 
+            else {
+                [session addConnection:conn];
+                [self setIsConnected:TRUE];
+            }
+        }
+    }
+}
+
+// Called from a NSThread
+// Waits for some connection to be established with this app
+- (void) waitForConnections:(id) argument {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    MIDINetworkSession *session1 = (MIDINetworkSession *)argument;
+    BOOL found = NO;
+    int cons = 0;
+    
+    while (!found) {
+        NSSet *connections =[session1 connections];
+        cons = [connections count];
+        if (cons  > 0) {
+            found = YES;
+        } else {
+            [NSThread sleepForTimeInterval:1];
+        }
+    }
+    
+    //[... do something with connections ....]
+    [self setLastRecMsg:@"Connection ok!"];
+    [self updateNetClient];
+    [pool release];
+}
+
+#pragma mark MIDINetworkNotificationSessionDidChange notification
+- (void)sessionDidChange:(NSNotification *)note
+{
+    NSLog(@"--sessionDidChange:%@", note);
+    
+    
+    //[self updateNetClient];
+    //[mTableView reloadData];
+}
+
+#pragma mark Net Service Browser Delegate Methods
+- (void)netServiceBrowser:(NSNetServiceBrowser *)aBrowser didFindService:(NSNetService *)service moreComing:(BOOL)more
+{
+    [service retain];
+    service.delegate = self;
+    NSLog(@"--didFindService:%@", service.name);
+    [service resolveWithTimeout:5];
+}
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)aBrowser didRemoveService:(NSNetService *)service moreComing:(BOOL)more
+{
+    if (service == self.connectedService)
+    {
+        self.isConnected = NO;
+    }
+    
+    //MIDINetworkSession* session = [MIDINetworkSession defaultSession];
+    MIDINetworkHost* toRemove = nil;
+    
+    for (MIDINetworkHost* theHost in session.contacts)
+    {
+        if ([theHost.name caseInsensitiveCompare:service.name] == NSOrderedSame)
+        {
+            toRemove = theHost;
+            break;
+        }
+    }
+    
+    [session removeContact:toRemove];
+    NSLog(@"--didRemoveService:%@", service.name);
+    
+    if (session.enabled)
+    {
+        //[mTableView reloadData];
+    }
+}
+
+- (void)netServiceDidResolveAddress:(NSNetService *)service
+{
+    NSString *name = service.name;
+    NSString *hostName = service.hostName;
+    
+    // Don't add the local machine
+    NSString* localHostname = [[UIDevice currentDevice] name];
+    
+    NSRange textRange = [[hostName lowercaseString] rangeOfString:[localHostname lowercaseString]];
+    
+    if (textRange.location == NSNotFound)
+    {
+        // Now add the device....
+        
+        //MIDINetworkSession* session = [MIDINetworkSession defaultSession];
+        MIDINetworkHost* contact = [MIDINetworkHost hostWithName:name netService:service];
+        
+        BOOL exists = NO;
+        for (MIDINetworkHost* theHost in session.contacts)
+        {
+            if ([theHost.name caseInsensitiveCompare:name] == NSOrderedSame)
+            {
+                exists = YES;
+                break;
+            }
+        }
+        if (!exists)
+        {
+            [session addContact:contact];
+            NSLog(@"--contact added:%@", contact.name);
+        }
+        
+        if (session.enabled)
+        {
+            //[mTableView reloadData];
+        }
+    }
+    
+    [service release];
+}
+
+- (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict
+{
+    NSLog(@"Could not resolve: %@", errorDict);
+}
+
+
+
+
+
 //////////////////////////////////////////
 //                  MIDI
 // These methods handles setup of MIDI connections,
@@ -164,19 +439,18 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 
 -(OSStatus) setUpMIDI {
 	
-	//MIDIClientRef client;
 	void* callbackContext = (__bridge void*) self;
+    
 	CheckError (MIDIClientCreate(CFSTR("Core MIDI to System Sounds Demo"), MyMIDINotifyProc, callbackContext, &client),
 				"Couldn't create MIDI client");
 	
-	//MIDIPortRef inPort;
+	//Create input port
 	CheckError (MIDIInputPortCreate(client, CFSTR("Input port"), MyMIDIReadProc, callbackContext, &inPort),
 				"Couldn't create MIDI input port");
 	
 	unsigned long sourceCount = MIDIGetNumberOfSources();
 	printf ("%ld sources\n", sourceCount);
 	for (int i = 0; i < sourceCount; ++i) {
-		//MIDIEndpointRef src = MIDIGetSource(i);
         src = MIDIGetSource(i);
 		CFStringRef endpointName = NULL;
 		CheckError(MIDIObjectGetStringProperty(src, kMIDIPropertyName, &endpointName),
@@ -185,6 +459,9 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 		CFStringGetCString(endpointName, endpointNameC, 255, kCFStringEncodingUTF8);
 		printf("  source %d: %s\n", i, endpointNameC);
 		MIDIPortConnectSource(inPort, src, NULL);
+        
+        strcpy(messageStruct.midiMessage, endpointNameC);
+        
 	}
     
     unsigned long destCount = MIDIGetNumberOfDestinations();
@@ -194,18 +471,67 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
                                     (CFStringRef)@"MidiMonitor Output Port", 
                                     &outPort), "Couldn´t create output MIDI port");
     
+    CFStringRef endpointDestName = NULL;
+    CheckError(MIDIObjectGetStringProperty(dest, kMIDIPropertyName, &endpointDestName), "Couldn´t get enpoint dest name");
+    char endpointDestNameC[255];
+    CFStringGetCString(endpointDestName, endpointDestNameC, 255, kCFStringEncodingUTF8);
+    //strcpy(messageStruct.midiMessage, endpointDestNameC);
+    
+    // Enable MIDI network session
+    session = [MIDINetworkSession defaultSession];
+    session.enabled = YES;
+    session.connectionPolicy = MIDINetworkConnectionPolicy_Anyone;
+    
+    [self setNetClient:@"Empty"];
+    
+    if (IsNetworkSession(dest)) {
+        NSString *netName = [session networkName]; // name of device (iPod)
+        NSLog(netName);
+        strcpy(messageStruct.midiMessage, "Network session ok!");
+        
+    }
+    
+    // Waits for others to connect
+    [NSThread detachNewThreadSelector:@selector(waitForConnections:) toTarget:self withObject:session];
+    
+    /////////////////////////////////////////////////////////
+    // Bonjour setup (from Molten: MIDIController.m)
+    NSMutableSet* set = [[NSMutableSet alloc] initWithSet:session.contacts];
+    for (MIDINetworkHost* theHost in set)
+    {
+        [session removeContact:theHost];
+    }
+    [set release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionDidChange:) name:MIDINetworkNotificationSessionDidChange object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionDidChange:) name:MIDINetworkNotificationContactsDidChange object:nil];
+    
+    // Start Bonjour browser
+    services = [[NSMutableArray alloc] init];
+    browser = [[NSNetServiceBrowser alloc] init];
+    [browser searchForServicesOfType:MIDINetworkBonjourServiceType inDomain:@""];
+    browser.delegate = self;
+            
     
 	return noErr;
 	
 }
 
 void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
+    
+    SoundController* mySoundController = (SoundController*)refCon;
+
 	printf("MIDI Notify, messageId=%ld,", message->messageID);
+    int n = mySoundController->session.contacts.count;
+    printf("Contacts: %u\n", n);
+    if (n > 0) {
+        // do something
+    }
 }
 
 static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *connRefCon) {
-	// TODO: fix this
-    //HelloWorldAUViewController *myVC = (__bridge HelloWorldAUViewController*) refCon;
+	
+    SoundController* mySoundController = (SoundController*)refCon;
 	
 	MIDIPacket *packet = (MIDIPacket *)pktlist->packet;	
 	for (int i=0; i < pktlist->numPackets; i++) {
@@ -216,8 +542,18 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 			(midiCommand == 0x08)) {
 			Byte note = packet->data[1] & 0x7F;
 			Byte velocity = packet->data[2] & 0x7F;
-			printf("midiCommand=%d. Note=%d, Velocity=%d\n", midiCommand, note, velocity);
+			printf("R: midiCommand=%d. Note=%d, Velocity=%d\n", midiCommand, note, velocity);
 			
+            char temp[256];
+            snprintf(temp, sizeof(temp), "%s%d%s%d%s%d",
+                     "R: midiCom=", midiCommand, 
+                     " Note=", note,
+                     " Velo=", velocity);
+            //mySoundController->messageStruct.midiMessage = temp;
+            strcpy(mySoundController->messageStruct.midiMessage, temp);
+            
+            //printf(" Msg: %s\n", mySoundController->messageStruct.midiMessage);
+            
 			// send to augraph
             // TODO: fix
             /*
@@ -233,10 +569,62 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 	}
 }
 
+// Generates a random note number
+UInt8 RandomNoteNumber() { return rand() / (RAND_MAX / 127); }
+
+- (void) sendNotes {
+    
+    //const UInt8 note      = RandomNoteNumber();
+    const UInt8 note      = 37;
+    const UInt8 noteOn[]  = { 0x99, note, 127 };
+    const UInt8 noteOff[] = { 0x89, note, 0   };
+    
+    [self sendBytes:noteOn size:sizeof(noteOn)];
+    [NSThread sleepForTimeInterval:0.1];
+    [self sendBytes:noteOff size:sizeof(noteOff)];
+}
+
+- (void) sendBytes:(const UInt8*)bytes size:(UInt32)size
+{
+    //NSLog(@"%s(%u bytes to core MIDI)", __func__, unsigned(size));
+    assert(size < 65536);
+    Byte packetBuffer[size+100];
+    MIDIPacketList *packetList = (MIDIPacketList*)packetBuffer;
+    MIDIPacket     *packet     = MIDIPacketListInit(packetList);
+    packet = MIDIPacketListAdd(packetList, sizeof(packetBuffer), packet, 0, size, bytes);
+    
+    [self sendPacketList:packetList];
+}
+
+- (void) sendPacketList:(const MIDIPacketList *)packetList
+{
+    // DEBUG
+    MIDIPacket *packet = (MIDIPacket *)packetList->packet;
+    Byte midiStatus = packet->data[0];
+    Byte midiCommand = midiStatus >> 4;
+    // is it a note-on or note-off
+    if ((midiCommand == 0x09) ||
+        (midiCommand == 0x08)) {
+        Byte note = packet->data[1] & 0x7F;
+        Byte velocity = packet->data[2] & 0x7F;
+        
+        NSString *comStr = [NSString stringWithFormat:@"S: midiCommand=%d. Note=%d, Velocity=%d\n", 
+                            midiCommand, note, velocity];
+        //strcpy(messageStruct.midiMessage, "Send1");
+        [self setLastRecMsg:comStr];
+        
+        //printf("midiCommand=%d. Note=%d, Velocity=%d\n", midiCommand, note, velocity);
+    }
+    
+    CheckError(MIDISend(outPort, dest, packetList), "Error sending MIDI data");
+}
+
+
 - (void) dealloc
 {
 	[sensorDelegate stopAnimation];
     [sensorDelegate dealloc];
+    [browser dealloc];
     
 	[super dealloc];
 }

@@ -13,7 +13,13 @@
 @synthesize instSelector;
 @synthesize pitchSlider;
 @synthesize playButton;
+@synthesize netButton;
+@synthesize connButton;
+@synthesize debugView;
+@synthesize netField;
 @synthesize soundController = _soundController;
+@synthesize previousMsg;
+@synthesize hostToConnect;
 
 
 -(IBAction)instSelectorChanged:(UISegmentedControl *)sender
@@ -36,6 +42,44 @@
 -(IBAction)playNote:(id)sender
 {
     [self.soundController playNote];
+    [self.soundController sendNotes];
+}
+
+-(IBAction)showContact:(id)sender
+{
+    [self.soundController updateNetClient];
+    [self setHostToConnect:[self.soundController hostToConnect]];
+    netField.text = [self.soundController hostToConnect];
+}
+
+-(IBAction)connect:(id)sender
+{
+    [self.soundController connectToHost:[self hostToConnect]];
+}
+
+
+- (void) addString:(NSString*)string
+{
+    NSString *newText = [debugView.text stringByAppendingFormat:@"\n%@", string];
+    debugView.text = newText;
+    
+    if (newText.length)
+        [debugView scrollRangeToVisible:(NSRange){newText.length-1, 1}];
+}
+
+
+// Timer callback method
+// to update the textView with info about
+// received MIDI data
+- (void) displayMidiRec:(NSTimer *)timer {
+
+    NSString *receivedMsg = [NSString string];
+    receivedMsg = [[timer userInfo] getLastRecMsg];
+    if (![receivedMsg isEqualToString:previousMsg]) {
+        [self addString:receivedMsg];
+        
+        [self setPreviousMsg:receivedMsg];
+    }
 }
 
 
@@ -54,6 +98,16 @@
     SoundController *newSoundController = [[SoundController alloc] init];
     self.soundController = newSoundController;
     [newSoundController release];
+    
+    debugView.text = nil;
+    //previousMsg = @"Message 1";
+    //NSValue* val = [NSValue valueWithPointer:self.soundController.messageStruct];
+    [NSTimer scheduledTimerWithTimeInterval:0.3
+									 target:self
+								   selector:@selector(displayMidiRec:)
+								   userInfo:self.soundController
+									repeats: YES];
+
 }
 
 - (void)viewDidUnload
@@ -61,6 +115,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [soundController release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
