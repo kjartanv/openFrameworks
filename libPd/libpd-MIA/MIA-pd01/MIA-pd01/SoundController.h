@@ -37,6 +37,7 @@ typedef struct {
     MessageStruct messageStruct;
     
     NSString *netClient;
+    NSString *hostList;
     
     // Bonjour sevice browser
     BOOL isConnected;
@@ -47,6 +48,7 @@ typedef struct {
 }
 
 @property (retain) NSString *netClient;
+@property (retain) NSString *hostList;
 
 @property (readwrite, assign) BOOL isConnected;
 @property (readwrite, retain) NSNetServiceBrowser* browser;

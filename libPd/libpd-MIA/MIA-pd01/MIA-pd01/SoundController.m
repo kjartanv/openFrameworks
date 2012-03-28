@@ -26,6 +26,7 @@
 @implementation SoundController
 
 @synthesize netClient;
+@synthesize hostList;
 
 @synthesize isConnected;
 @synthesize browser;
@@ -242,17 +243,19 @@ BOOL IsNetworkSession(MIDIEndpointRef ref)
     if (session.contacts.count != 0) {
         
         NSLog(@"contacts!");
-        NSString *netString = [NSString stringWithFormat:@"C: "];
+        NSString *netString = @"Con: ";
+        NSString *tempString = @"";
         for (host in session.contacts)
         {
-            [netString stringByAppendingString:host.name];
-            
+            netString = [netString stringByAppendingString:host.name];
+            NSLog(@"string: %@", netString);
             for (MIDINetworkConnection* conn in session.connections)
             {
-                [netString stringByAppendingString:@"-c-"];
+                netString = [netString stringByAppendingString:@"-c-"];
             }
         }
         [self setNetClient:netString];
+        hostList = netString;
     }
     else {
         NSLog(@"contacts count = 0");
@@ -267,6 +270,8 @@ BOOL IsNetworkSession(MIDIEndpointRef ref)
         [self setIsConnected:FALSE];
         NSLog(@"Connections count = 0");
     }
+    NSLog(@"Connections: %u", session.connections.count);
+    NSLog(@"\nnetCLient: %@", netClient);
 }
 
 // Returns the (first) host, other than itself, that can
@@ -285,12 +290,15 @@ BOOL IsNetworkSession(MIDIEndpointRef ref)
 
 -(void)connectToHost:(NSString *)otherHost
 {
+    NSString *localHostName = [[UIDevice currentDevice] name];
+    MIDINetworkConnection* conn;
+    
     for (MIDINetworkHost *aHost in session.contacts) {
         
         if ([aHost.name isEqualToString:otherHost]) {
             NSLog(@"Found %@", otherHost);
             
-            MIDINetworkConnection* conn = [MIDINetworkConnection connectionWithHost:aHost];
+            conn = [MIDINetworkConnection connectionWithHost:aHost];
             if (isConnected) {
                 NSLog(@"Try to remove...");
                 if([session removeConnection:conn]) {
@@ -303,11 +311,19 @@ BOOL IsNetworkSession(MIDIEndpointRef ref)
                 [self setIsConnected:TRUE];
             }
         }
+        // if another contact found that is not the given parameter, also connect to that
+        else if (![aHost.name isEqualToString:otherHost] && ![aHost.name isEqualToString:localHostName]) {
+            NSLog(@"Found %@", otherHost);
+            
+            conn = [MIDINetworkConnection connectionWithHost:aHost];
+            [session addConnection:conn];
+        }
     }
 }
 
 // Called from a NSThread
 // Waits for some connection to be established with this app
+// Not part of Bonjour/MIDI Network Session setup
 - (void) waitForConnections:(id) argument {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     MIDINetworkSession *session1 = (MIDINetworkSession *)argument;
@@ -335,7 +351,21 @@ BOOL IsNetworkSession(MIDIEndpointRef ref)
 {
     NSLog(@"--sessionDidChange:%@", note);
     
+    /*
+    // populate array with all available contacts
+    for (host in session.contacts) {
+        [services addObject:host];
+        NSLog(@"Added host:%a\n", host.name);
+    }
     
+    // empty the hostList string
+    hostList = @"";
+    
+    for (host in services) {
+        [hostList stringByAppendingString:host.name];
+    }
+    */
+     
     //[self updateNetClient];
     //[mTableView reloadData];
 }
@@ -407,6 +437,11 @@ BOOL IsNetworkSession(MIDIEndpointRef ref)
         {
             [session addContact:contact];
             NSLog(@"--contact added:%@", contact.name);
+            
+            // add name of contact to array
+            [services addObject:contact.name];
+            // add name of contact to debug string
+            //[hostList stringByAppendingString:contact.name];
         }
         
         if (session.enabled)
@@ -499,7 +534,7 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
     NSMutableSet* set = [[NSMutableSet alloc] initWithSet:session.contacts];
     for (MIDINetworkHost* theHost in set)
     {
-        [session removeContact:theHost];
+        [session removeContact:theHost];        // why??
     }
     [set release];
     
@@ -625,6 +660,7 @@ UInt8 RandomNoteNumber() { return rand() / (RAND_MAX / 127); }
 	[sensorDelegate stopAnimation];
     [sensorDelegate dealloc];
     [browser dealloc];
+    [services dealloc];
     
 	[super dealloc];
 }

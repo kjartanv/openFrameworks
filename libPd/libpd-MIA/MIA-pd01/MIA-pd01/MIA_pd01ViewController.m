@@ -49,7 +49,9 @@
 {
     [self.soundController updateNetClient];
     [self setHostToConnect:[self.soundController hostToConnect]];
-    netField.text = [self.soundController hostToConnect];
+    //netField.text = [self.soundController hostToConnect];
+    netField.text = [self.soundController hostList];
+    
 }
 
 -(IBAction)connect:(id)sender
