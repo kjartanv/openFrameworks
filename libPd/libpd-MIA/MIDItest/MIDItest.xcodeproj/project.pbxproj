@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D13A5C9A153FF58200830844 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13A5C99153FF58200830844 /* UIKit.framework */; };
+		D13A5C9C153FF58200830844 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13A5C9B153FF58200830844 /* Foundation.framework */; };
+		D13A5C9E153FF58200830844 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13A5C9D153FF58200830844 /* CoreGraphics.framework */; };
+		D13A5CA4153FF58200830844 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D13A5CA2153FF58200830844 /* InfoPlist.strings */; };
+		D13A5CA6153FF58200830844 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D13A5CA5153FF58200830844 /* main.m */; };
+		D13A5CAA153FF58200830844 /* MIDItestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D13A5CA9153FF58200830844 /* MIDItestAppDelegate.m */; };
+		D13A5CAD153FF58200830844 /* MIDItestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13A5CAC153FF58200830844 /* MIDItestViewController.m */; };
+		D13A5CB0153FF58200830844 /* MIDItestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D13A5CAE153FF58200830844 /* MIDItestViewController.xib */; };
+		D13A5CB8153FF7DF00830844 /* NetMidiController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13A5CB7153FF7DF00830844 /* NetMidiController.m */; };
+		D13A5CBA153FF7FC00830844 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13A5CB9153FF7FC00830844 /* CoreMIDI.framework */; };
+		D13A5CBD153FF92200830844 /* SNFCoreAudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D13A5CBC153FF92200830844 /* SNFCoreAudioUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D13A5C95153FF58200830844 /* MIDItest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIDItest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13A5C99153FF58200830844 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D13A5C9B153FF58200830844 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D13A5C9D153FF58200830844 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D13A5CA1153FF58200830844 /* MIDItest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIDItest-Info.plist"; sourceTree = "<group>"; };
+		D13A5CA3153FF58200830844 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D13A5CA5153FF58200830844 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D13A5CA7153FF58200830844 /* MIDItest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIDItest-Prefix.pch"; sourceTree = "<group>"; };
+		D13A5CA8153FF58200830844 /* MIDItestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDItestAppDelegate.h; sourceTree = "<group>"; };
+		D13A5CA9153FF58200830844 /* MIDItestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIDItestAppDelegate.m; sourceTree = "<group>"; };
+		D13A5CAB153FF58200830844 /* MIDItestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDItestViewController.h; sourceTree = "<group>"; };
+		D13A5CAC153FF58200830844 /* MIDItestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIDItestViewController.m; sourceTree = "<group>"; };
+		D13A5CAF153FF58200830844 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MIDItestViewController.xib; sourceTree = "<group>"; };
+		D13A5CB6153FF7DF00830844 /* NetMidiController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMidiController.h; sourceTree = "<group>"; };
+		D13A5CB7153FF7DF00830844 /* NetMidiController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMidiController.m; sourceTree = "<group>"; };
+		D13A5CB9153FF7FC00830844 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		D13A5CBB153FF92200830844 /* SNFCoreAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNFCoreAudioUtils.h; path = "../../MIA-pd01 bonjour/MIA-pd01/SNFCoreAudioUtils.h"; sourceTree = "<group>"; };
+		D13A5CBC153FF92200830844 /* SNFCoreAudioUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNFCoreAudioUtils.m; path = "../../MIA-pd01 bonjour/MIA-pd01/SNFCoreAudioUtils.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D13A5C92153FF58200830844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13A5CBA153FF7FC00830844 /* CoreMIDI.framework in Frameworks */,
+				D13A5C9A153FF58200830844 /* UIKit.framework in Frameworks */,
+				D13A5C9C153FF58200830844 /* Foundation.framework in Frameworks */,
+				D13A5C9E153FF58200830844 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D13A5C8A153FF58200830844 = {
+			isa = PBXGroup;
+			children = (
+				D13A5C9F153FF58200830844 /* MIDItest */,
+				D13A5C98153FF58200830844 /* Frameworks */,
+				D13A5C96153FF58200830844 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D13A5C96153FF58200830844 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D13A5C95153FF58200830844 /* MIDItest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D13A5C98153FF58200830844 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D13A5CB9153FF7FC00830844 /* CoreMIDI.framework */,
+				D13A5C99153FF58200830844 /* UIKit.framework */,
+				D13A5C9B153FF58200830844 /* Foundation.framework */,
+				D13A5C9D153FF58200830844 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D13A5C9F153FF58200830844 /* MIDItest */ = {
+			isa = PBXGroup;
+			children = (
+				D13A5CBB153FF92200830844 /* SNFCoreAudioUtils.h */,
+				D13A5CBC153FF92200830844 /* SNFCoreAudioUtils.m */,
+				D13A5CA8153FF58200830844 /* MIDItestAppDelegate.h */,
+				D13A5CA9153FF58200830844 /* MIDItestAppDelegate.m */,
+				D13A5CAB153FF58200830844 /* MIDItestViewController.h */,
+				D13A5CAC153FF58200830844 /* MIDItestViewController.m */,
+				D13A5CB6153FF7DF00830844 /* NetMidiController.h */,
+				D13A5CB7153FF7DF00830844 /* NetMidiController.m */,
+				D13A5CAE153FF58200830844 /* MIDItestViewController.xib */,
+				D13A5CA0153FF58200830844 /* Supporting Files */,
+			);
+			path = MIDItest;
+			sourceTree = "<group>";
+		};
+		D13A5CA0153FF58200830844 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D13A5CA1153FF58200830844 /* MIDItest-Info.plist */,
+				D13A5CA2153FF58200830844 /* InfoPlist.strings */,
+				D13A5CA5153FF58200830844 /* main.m */,
+				D13A5CA7153FF58200830844 /* MIDItest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D13A5C94153FF58200830844 /* MIDItest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D13A5CB3153FF58200830844 /* Build configuration list for PBXNativeTarget "MIDItest" */;
+			buildPhases = (
+				D13A5C91153FF58200830844 /* Sources */,
+				D13A5C92153FF58200830844 /* Frameworks */,
+				D13A5C93153FF58200830844 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIDItest;
+			productName = MIDItest;
+			productReference = D13A5C95153FF58200830844 /* MIDItest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D13A5C8C153FF58200830844 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D13A5C8F153FF58200830844 /* Build configuration list for PBXProject "MIDItest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D13A5C8A153FF58200830844;
+			productRefGroup = D13A5C96153FF58200830844 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D13A5C94153FF58200830844 /* MIDItest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D13A5C93153FF58200830844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13A5CA4153FF58200830844 /* InfoPlist.strings in Resources */,
+				D13A5CB0153FF58200830844 /* MIDItestViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D13A5C91153FF58200830844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13A5CA6153FF58200830844 /* main.m in Sources */,
+				D13A5CAA153FF58200830844 /* MIDItestAppDelegate.m in Sources */,
+				D13A5CAD153FF58200830844 /* MIDItestViewController.m in Sources */,
+				D13A5CB8153FF7DF00830844 /* NetMidiController.m in Sources */,
+				D13A5CBD153FF92200830844 /* SNFCoreAudioUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D13A5CA2153FF58200830844 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D13A5CA3153FF58200830844 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D13A5CAE153FF58200830844 /* MIDItestViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D13A5CAF153FF58200830844 /* en */,
+			);
+			name = MIDItestViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D13A5CB1153FF58200830844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D13A5CB2153FF58200830844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D13A5CB4153FF58200830844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIDItest/MIDItest-Prefix.pch";
+				INFOPLIST_FILE = "MIDItest/MIDItest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D13A5CB5153FF58200830844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIDItest/MIDItest-Prefix.pch";
+				INFOPLIST_FILE = "MIDItest/MIDItest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D13A5C8F153FF58200830844 /* Build configuration list for PBXProject "MIDItest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13A5CB1153FF58200830844 /* Debug */,
+				D13A5CB2153FF58200830844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D13A5CB3153FF58200830844 /* Build configuration list for PBXNativeTarget "MIDItest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13A5CB4153FF58200830844 /* Debug */,
+				D13A5CB5153FF58200830844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D13A5C8C153FF58200830844 /* Project object */;
+}

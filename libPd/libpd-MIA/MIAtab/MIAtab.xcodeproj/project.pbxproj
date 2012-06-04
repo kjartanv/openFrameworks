@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D1B0A0C81521F3CB00F9E06C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B0A0C71521F3CB00F9E06C /* UIKit.framework */; };
+		D1B0A0CA1521F3CB00F9E06C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B0A0C91521F3CB00F9E06C /* Foundation.framework */; };
+		D1B0A0CC1521F3CB00F9E06C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B0A0CB1521F3CB00F9E06C /* CoreGraphics.framework */; };
+		D1B0A0D21521F3CB00F9E06C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0D01521F3CB00F9E06C /* InfoPlist.strings */; };
+		D1B0A0D41521F3CB00F9E06C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B0A0D31521F3CB00F9E06C /* main.m */; };
+		D1B0A0D81521F3CB00F9E06C /* MIAtabAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B0A0D71521F3CB00F9E06C /* MIAtabAppDelegate.m */; };
+		D1B0A0DB1521F3CB00F9E06C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0D91521F3CB00F9E06C /* MainStoryboard.storyboard */; };
+		D1B0A0DE1521F3CB00F9E06C /* MIAtabFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B0A0DD1521F3CB00F9E06C /* MIAtabFirstViewController.m */; };
+		D1B0A0E01521F3CB00F9E06C /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0DF1521F3CB00F9E06C /* first.png */; };
+		D1B0A0E21521F3CB00F9E06C /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0E11521F3CB00F9E06C /* first@2x.png */; };
+		D1B0A0E51521F3CB00F9E06C /* MIAtabSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B0A0E41521F3CB00F9E06C /* MIAtabSecondViewController.m */; };
+		D1B0A0E71521F3CB00F9E06C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0E61521F3CB00F9E06C /* second.png */; };
+		D1B0A0E91521F3CB00F9E06C /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0E81521F3CB00F9E06C /* second@2x.png */; };
+		D1B0A0F21521FB0000F9E06C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0F01521FB0000F9E06C /* 1.png */; };
+		D1B0A0F31521FB0000F9E06C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B0A0F11521FB0000F9E06C /* 2.png */; };
+		D1D605EB1523053400D5FE3B /* MidiController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D605EA1523053400D5FE3B /* MidiController.m */; };
+		D1D605ED1523056300D5FE3B /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D605EC1523056300D5FE3B /* CoreMIDI.framework */; };
+		D1D605F01523152C00D5FE3B /* SNFCoreAudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D605EF1523152C00D5FE3B /* SNFCoreAudioUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D1B0A0C31521F3CB00F9E06C /* MIAtab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIAtab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1B0A0C71521F3CB00F9E06C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D1B0A0C91521F3CB00F9E06C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D1B0A0CB1521F3CB00F9E06C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D1B0A0CF1521F3CB00F9E06C /* MIAtab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIAtab-Info.plist"; sourceTree = "<group>"; };
+		D1B0A0D11521F3CB00F9E06C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D1B0A0D31521F3CB00F9E06C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D1B0A0D51521F3CB00F9E06C /* MIAtab-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIAtab-Prefix.pch"; sourceTree = "<group>"; };
+		D1B0A0D61521F3CB00F9E06C /* MIAtabAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAtabAppDelegate.h; sourceTree = "<group>"; };
+		D1B0A0D71521F3CB00F9E06C /* MIAtabAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAtabAppDelegate.m; sourceTree = "<group>"; };
+		D1B0A0DA1521F3CB00F9E06C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D1B0A0DC1521F3CB00F9E06C /* MIAtabFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAtabFirstViewController.h; sourceTree = "<group>"; };
+		D1B0A0DD1521F3CB00F9E06C /* MIAtabFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAtabFirstViewController.m; sourceTree = "<group>"; };
+		D1B0A0DF1521F3CB00F9E06C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		D1B0A0E11521F3CB00F9E06C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		D1B0A0E31521F3CB00F9E06C /* MIAtabSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAtabSecondViewController.h; sourceTree = "<group>"; };
+		D1B0A0E41521F3CB00F9E06C /* MIAtabSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAtabSecondViewController.m; sourceTree = "<group>"; };
+		D1B0A0E61521F3CB00F9E06C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		D1B0A0E81521F3CB00F9E06C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		D1B0A0F01521FB0000F9E06C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../../../../../Downloads/Images/1.png; sourceTree = "<group>"; };
+		D1B0A0F11521FB0000F9E06C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../../../../Downloads/Images/2.png; sourceTree = "<group>"; };
+		D1D605E91523053300D5FE3B /* MidiController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiController.h; sourceTree = "<group>"; };
+		D1D605EA1523053400D5FE3B /* MidiController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiController.m; sourceTree = "<group>"; };
+		D1D605EC1523056300D5FE3B /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		D1D605EE1523152B00D5FE3B /* SNFCoreAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNFCoreAudioUtils.h; path = "../../MIA-pd01 bonjour/MIA-pd01/SNFCoreAudioUtils.h"; sourceTree = "<group>"; };
+		D1D605EF1523152C00D5FE3B /* SNFCoreAudioUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNFCoreAudioUtils.m; path = "../../MIA-pd01 bonjour/MIA-pd01/SNFCoreAudioUtils.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1B0A0C01521F3CB00F9E06C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1D605ED1523056300D5FE3B /* CoreMIDI.framework in Frameworks */,
+				D1B0A0C81521F3CB00F9E06C /* UIKit.framework in Frameworks */,
+				D1B0A0CA1521F3CB00F9E06C /* Foundation.framework in Frameworks */,
+				D1B0A0CC1521F3CB00F9E06C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D1B0A0B81521F3CA00F9E06C = {
+			isa = PBXGroup;
+			children = (
+				D1B0A0CD1521F3CB00F9E06C /* MIAtab */,
+				D1B0A0C61521F3CB00F9E06C /* Frameworks */,
+				D1B0A0C41521F3CB00F9E06C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1B0A0C41521F3CB00F9E06C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1B0A0C31521F3CB00F9E06C /* MIAtab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1B0A0C61521F3CB00F9E06C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1D605EC1523056300D5FE3B /* CoreMIDI.framework */,
+				D1B0A0C71521F3CB00F9E06C /* UIKit.framework */,
+				D1B0A0C91521F3CB00F9E06C /* Foundation.framework */,
+				D1B0A0CB1521F3CB00F9E06C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1B0A0CD1521F3CB00F9E06C /* MIAtab */ = {
+			isa = PBXGroup;
+			children = (
+				D1D605EE1523152B00D5FE3B /* SNFCoreAudioUtils.h */,
+				D1D605EF1523152C00D5FE3B /* SNFCoreAudioUtils.m */,
+				D1B0A0D61521F3CB00F9E06C /* MIAtabAppDelegate.h */,
+				D1B0A0D71521F3CB00F9E06C /* MIAtabAppDelegate.m */,
+				D1B0A0D91521F3CB00F9E06C /* MainStoryboard.storyboard */,
+				D1B0A0DC1521F3CB00F9E06C /* MIAtabFirstViewController.h */,
+				D1B0A0DD1521F3CB00F9E06C /* MIAtabFirstViewController.m */,
+				D1B0A0DF1521F3CB00F9E06C /* first.png */,
+				D1B0A0E11521F3CB00F9E06C /* first@2x.png */,
+				D1B0A0E31521F3CB00F9E06C /* MIAtabSecondViewController.h */,
+				D1B0A0E41521F3CB00F9E06C /* MIAtabSecondViewController.m */,
+				D1B0A0E61521F3CB00F9E06C /* second.png */,
+				D1B0A0E81521F3CB00F9E06C /* second@2x.png */,
+				D1D605E91523053300D5FE3B /* MidiController.h */,
+				D1D605EA1523053400D5FE3B /* MidiController.m */,
+				D1B0A0CE1521F3CB00F9E06C /* Supporting Files */,
+				D1B0A0EF1521FAE900F9E06C /* Images */,
+			);
+			path = MIAtab;
+			sourceTree = "<group>";
+		};
+		D1B0A0CE1521F3CB00F9E06C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1B0A0CF1521F3CB00F9E06C /* MIAtab-Info.plist */,
+				D1B0A0D01521F3CB00F9E06C /* InfoPlist.strings */,
+				D1B0A0D31521F3CB00F9E06C /* main.m */,
+				D1B0A0D51521F3CB00F9E06C /* MIAtab-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1B0A0EF1521FAE900F9E06C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D1B0A0F01521FB0000F9E06C /* 1.png */,
+				D1B0A0F11521FB0000F9E06C /* 2.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1B0A0C21521F3CB00F9E06C /* MIAtab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1B0A0EC1521F3CB00F9E06C /* Build configuration list for PBXNativeTarget "MIAtab" */;
+			buildPhases = (
+				D1B0A0BF1521F3CB00F9E06C /* Sources */,
+				D1B0A0C01521F3CB00F9E06C /* Frameworks */,
+				D1B0A0C11521F3CB00F9E06C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIAtab;
+			productName = MIAtab;
+			productReference = D1B0A0C31521F3CB00F9E06C /* MIAtab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1B0A0BA1521F3CA00F9E06C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D1B0A0BD1521F3CA00F9E06C /* Build configuration list for PBXProject "MIAtab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D1B0A0B81521F3CA00F9E06C;
+			productRefGroup = D1B0A0C41521F3CB00F9E06C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1B0A0C21521F3CB00F9E06C /* MIAtab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1B0A0C11521F3CB00F9E06C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1B0A0D21521F3CB00F9E06C /* InfoPlist.strings in Resources */,
+				D1B0A0DB1521F3CB00F9E06C /* MainStoryboard.storyboard in Resources */,
+				D1B0A0E01521F3CB00F9E06C /* first.png in Resources */,
+				D1B0A0E21521F3CB00F9E06C /* first@2x.png in Resources */,
+				D1B0A0E71521F3CB00F9E06C /* second.png in Resources */,
+				D1B0A0E91521F3CB00F9E06C /* second@2x.png in Resources */,
+				D1B0A0F21521FB0000F9E06C /* 1.png in Resources */,
+				D1B0A0F31521FB0000F9E06C /* 2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D1B0A0BF1521F3CB00F9E06C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1B0A0D41521F3CB00F9E06C /* main.m in Sources */,
+				D1B0A0D81521F3CB00F9E06C /* MIAtabAppDelegate.m in Sources */,
+				D1B0A0DE1521F3CB00F9E06C /* MIAtabFirstViewController.m in Sources */,
+				D1B0A0E51521F3CB00F9E06C /* MIAtabSecondViewController.m in Sources */,
+				D1D605EB1523053400D5FE3B /* MidiController.m in Sources */,
+				D1D605F01523152C00D5FE3B /* SNFCoreAudioUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D1B0A0D01521F3CB00F9E06C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1B0A0D11521F3CB00F9E06C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D1B0A0D91521F3CB00F9E06C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1B0A0DA1521F3CB00F9E06C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D1B0A0EA1521F3CB00F9E06C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D1B0A0EB1521F3CB00F9E06C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D1B0A0ED1521F3CB00F9E06C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIAtab/MIAtab-Prefix.pch";
+				INFOPLIST_FILE = "MIAtab/MIAtab-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D1B0A0EE1521F3CB00F9E06C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIAtab/MIAtab-Prefix.pch";
+				INFOPLIST_FILE = "MIAtab/MIAtab-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D1B0A0BD1521F3CA00F9E06C /* Build configuration list for PBXProject "MIAtab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1B0A0EA1521F3CB00F9E06C /* Debug */,
+				D1B0A0EB1521F3CB00F9E06C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1B0A0EC1521F3CB00F9E06C /* Build configuration list for PBXNativeTarget "MIAtab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1B0A0ED1521F3CB00F9E06C /* Debug */,
+				D1B0A0EE1521F3CB00F9E06C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D1B0A0BA1521F3CA00F9E06C /* Project object */;
+}

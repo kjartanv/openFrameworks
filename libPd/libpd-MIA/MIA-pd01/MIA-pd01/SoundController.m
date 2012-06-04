@@ -527,7 +527,7 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
     }
     
     // Waits for others to connect
-    [NSThread detachNewThreadSelector:@selector(waitForConnections:) toTarget:self withObject:session];
+    //[NSThread detachNewThreadSelector:@selector(waitForConnections:) toTarget:self withObject:session];
     
     /////////////////////////////////////////////////////////
     // Bonjour setup (from Molten: MIDIController.m)
@@ -544,12 +544,10 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
     // Start Bonjour browser
     services = [[NSMutableArray alloc] init];
     browser = [[NSNetServiceBrowser alloc] init];
-    [browser searchForServicesOfType:MIDINetworkBonjourServiceType inDomain:@""];
     browser.delegate = self;
-            
+    [browser searchForServicesOfType:MIDINetworkBonjourServiceType inDomain:@""];
     
 	return noErr;
-	
 }
 
 void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
